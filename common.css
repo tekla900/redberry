@@ -25,3 +25,74 @@ button:hover {
 button:focus {
     background-color: #1A5DAB;
 }
+
+input {
+    height: 60px;
+    /* width: 280px; */
+    border-radius: 8px;
+    border: 1.8px solid #8AC0E2;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 21px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+input:focus-within{
+    background: rgba(43, 75, 242, 0.06);
+    border: 1.8px solid #6499FF;
+    color: black;
+}
+
+/* es vafshe js-shi chavwero sjobs */
+input:user-invalid {
+    box-shadow:none;
+    border: 2px solid red !important;
+    outline:none;
+}
+
+
+span {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2E2E2E;
+}
+
+label {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 500;
+}
+select {
+    height: 60px;
+    background-color: #EBEBEB;
+    padding: 0 7.5px;
+    border-radius: 8px;
+    width: 878px; 
+    /* width საჭიროა? */
+}
+
+hr {
+    width: 894px;
+    border: 1px solid #C7C7C7;
+}
+
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+    margin-top: 67px;
+}
+
+#prv-btn {
+    margin: 0;
+    padding: 0;
+    width: 53px;
+    height: 53px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    position: relative;
+    top: 53px;
+    left: 70px;
+}

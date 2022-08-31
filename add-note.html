@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Note</title>
+    <link rel="stylesheet" href="add-note.css">
+    <link rel="stylesheet" href="common.css">
+</head>
+<body>
+    <div class="prv-btn-ctn">
+        <button type="button" id="prv-btn"><img src="./images/Vector.svg" id="prv"></button>
+    </div>
+    <div class="title-container"> <!-- ეს დივი შეიძლება არც დამჭირდეს -->
+        <h3 class="section-title first-title">თანამშრომლის ინფო</h3>
+        <h3 class="section-title sec-title">ლეპტოპის მახასიათებლები</h3>
+      </div>
+      <form action="https://pcfy.redberryinternship.ge/api/laptop/create" id="register-laptop">
+        <fieldset class="tab">
+              <div class="center">
+                <div class="input-row">
+                    <div class="input-div">
+                        <label for="name">სახელი</label>
+                        <input type="text" id="name" name="name" required placeholder="გრიშა" pattern="^(([\u10D0-\u10F0]+)){2,}">
+                        <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                    </div>
+      
+                    <div class="input-div">
+                        <label for="lastname">გვარი</label>
+                        <input type="text" id="lastname" name="surname" required placeholder="ბაგრატიონი" pattern="^(([\u10D0-\u10F0]+)){2,}">
+                        <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
+                    </div>
+                </div>
+              
+                <div>
+                  <select name="teams" id="teams" required>
+                    <option value="" disabled selected>თიმი</option>
+                    <option value="esecrame">esecrame</option>
+                  </select>
+                </div>
+      
+                <div>
+                  <select name="positions" id="positions" required>
+                    <option value="" disabled selected>პოზიცია</option>
+                    <option value="rame">rame</option>
+                  </select>
+                </div>
+      
+                <div class="input-div">
+                  <label for="email">მეილი</label>
+                  <input type="email" id="email" name="email" pattern=".+@redberry.ge" required>
+                  <span>უნდა მთავრდებოდეს @redberry.ge-ით</span>
+                </div>
+      
+                <div class="input-div">
+                    <label for="number">ტელეფონის ნომერი</label>
+                    <input type="tel" id="number" name="phone_number" placeholder="+995 598 00 07 01" pattern="^(\+?995)?\d{9}$">
+                    <span>უნდა აკმაყოფილებდეს ქართული მობ.ნომრის ფორმატს</span>
+                </div>
+      
+                <div class="btn-div">
+                  <button id="next-button" type="button">შემდეგი</button>
+                </div>
+            </div>  
+          </fieldset>
+
+          
+      </form>
+      <div class="img-container">
+        <img src="./images/LOGO-10 2.svg" id="logo-2">
+      </div>
+      
+      <script src="./add-note.js">
+ 
+      </script>
+</body>
+</html>
