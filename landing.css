@@ -1,0 +1,17 @@
+.center {
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 781px;
+}
+
+.center button {
+    margin-bottom: 26px;
+}
+
+#illustration {
+    width: 781px;
+    height: 482px;
+    margin: 40px;
+}

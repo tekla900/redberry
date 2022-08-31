@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    width: 387px;
+    border-radius: 8px;
+    padding: 18px 60px;
+    background-color: #62A1EB;
+    color: #FFFF;
+    line-height: 24px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #317AD0;
+}
+
+button:focus {
+    background-color: #1A5DAB;
+}
