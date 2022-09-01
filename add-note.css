@@ -50,3 +50,6 @@ fieldset {
     justify-content: flex-end;
 }
 
+input[type='text'], input[id='laptop-name'], .date-div, .price-div   {
+    width: 400px;
+}

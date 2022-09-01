@@ -74,3 +74,57 @@ fetch('https://pcfy.redberryinternship.ge/api/teams', {mode: 'cors'})
             })
             });
         });
+
+
+// fetching laptop data
+const selectBrand = document.querySelector('#laptop-brands');
+const selectCpu = document.querySelector('#cpus');
+
+fetch('https://pcfy.redberryinternship.ge/api/brands', {mode: 'cors'})
+.then(response => response.json())
+.then(function(response){
+    response.data.forEach(element => {
+        const opt = document.createElement('option');
+        opt.textContent = element.name;
+        selectBrand.appendChild(opt)
+    });
+});
+
+fetch('https://pcfy.redberryinternship.ge/api/cpus', {mode: 'cors'})
+.then(response => response.json())
+.then(function(response){
+    response.data.forEach(element => {
+        const opt = document.createElement('option');
+        opt.textContent = element.name;
+        selectCpu.appendChild(opt)
+    });
+});
+
+
+// changing tabs
+
+const nxtBtn = document.getElementById('next-button');
+const prvBtn = document.getElementById('prv-btn');
+const firstTab = document.querySelector('.tab');
+const secTab = document.querySelector('.sec-tab');
+const firstTitle = document.querySelector('.first-title');
+const secTitle = document.querySelector('.sec-title');
+
+
+
+nxtBtn.addEventListener('click', () => {
+    firstTab.style.display = 'none';
+    secTab.style.display = 'inherit';
+    
+    firstTitle.style.borderBottom = 'none';
+    secTitle.style.borderBottom = '2px solid black';
+})
+
+prvBtn.addEventListener('click', () => {
+    secTab.style.display = 'none';
+    firstTab.style.display = 'inherit';
+    
+    secTitle.style.borderBottom = 'none';
+    firstTitle.style.borderBottom = '2px solid black';
+})
+
