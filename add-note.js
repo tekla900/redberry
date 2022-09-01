@@ -1,10 +1,18 @@
 // save input values to local storage
 const nameInput = document.getElementById('name');
 const surnameInput = document.getElementById('lastname');
-const positions = document.getElementById('positions');
-const teams = document.getElementById('teams');
 const emailInput = document.getElementById('email');
 const numberInput = document.getElementById('number');
+
+const laptopName = document.getElementById('laptop-name');
+// const laptopBrand = document.getElementById('laptop-brands');
+// const laptopCpu =  document.getElementById('cpus');
+const cpuCore = document.getElementById('cpu-core');
+const cpuThread = document.getElementById('cpu-thread');
+const ram = document.getElementById('ram');
+const date = document.getElementById('pur-date');
+const price = document.getElementById('price');
+
 
 const form = document.querySelector('form');
 
@@ -17,10 +25,18 @@ if(!localStorage.getItem('name')) {
 function populateStorage() {
   localStorage.setItem('name',  nameInput.value);
   localStorage.setItem('surname',  surnameInput.value);
-  localStorage.setItem('position',  positions.value);
-  localStorage.setItem('team',  teams.value);
   localStorage.setItem('email',  emailInput.value);
   localStorage.setItem('number',  numberInput.value);
+
+   
+  localStorage.setItem('laptop-name', laptopName.value);
+//   localStorage.setItem('laptop-brand', laptopBrand.value);
+//   localStorage.setItem('laptop-cpu', laptopCpu.value);
+  localStorage.setItem('cpu-core', cpuCore.value);
+  localStorage.setItem('cpu-thread', cpuThread.value);
+  localStorage.setItem('ram', ram.value);
+  localStorage.setItem('date', date.value);
+  localStorage.setItem('price', price.value);
 
   setInputs();
 }
@@ -30,15 +46,30 @@ function setInputs() {
   let currentSurname = localStorage.getItem('surname');
   let currentEmail = localStorage.getItem('email');
   let currentNumber = localStorage.getItem('number');
-  let currentTeam = localStorage.getItem('team');
-  let currentPosition = localStorage.getItem('position');
+
+  let currentLaptopName = localStorage.getItem('laptop-name');
+//   let currentLaptopBrand = localStorage.getItem('laptop-brand');
+//   let currentLaptopCpu = localStorage.getItem('laptop-cpu');
+  let currentCpuCore = localStorage.getItem('cpu-core');
+  let currentCpuThread = localStorage.getItem('cpu-thread');
+  let currentRam = localStorage.getItem('ram');
+  let currentDate = localStorage.getItem('date');
+  let currentPrice = localStorage.getItem('price');
 
   nameInput.value = currentName;
   surnameInput.value = currentSurname;
   emailInput.value = currentEmail;
   numberInput.value = currentNumber;
-  teams.value = currentTeam;
-  positions.value = currentPosition;
+
+ laptopName.value = currentLaptopName;
+//  laptopBrand.value = currentLaptopBrand;
+//  laptopCpu.value = currentLaptopCpu;
+ cpuCore.value = currentCpuCore;
+ cpuThread.value = currentCpuThread;
+ ram.value = currentRam;
+ date.value = currentDate;
+ price.value = currentPrice;
+
 }
 
 form.addEventListener('input', populateStorage)
@@ -128,3 +159,27 @@ prvBtn.addEventListener('click', () => {
     firstTitle.style.borderBottom = '2px solid black';
 })
 
+
+// file drop zone
+function dropHandler(ev) {
+  ev.preventDefault();
+
+  if (ev.dataTransfer.items) {
+    [...ev.dataTransfer.items].forEach((item, i) => {
+      if (item.kind === 'file') {
+        const file = item.getAsFile();
+        console.log('es romelis?');
+        const fileName = file.name
+        console.log(`… file[${i}].name = ${file.name}`);
+      }
+    });
+  } else {
+    [...ev.dataTransfer.files].forEach((file, i) => {
+      console.log(`… file[${i}].name = ${file.name}`);
+    });
+  }
+}
+
+function dragOverHandler(ev) {
+  ev.preventDefault();
+}

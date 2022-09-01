@@ -8,6 +8,7 @@
     gap: 66px;
     margin-top: 80px;
     margin-bottom: 30px;
+    
 }
 
 form {
@@ -52,4 +53,117 @@ fieldset {
 
 input[type='text'], input[id='laptop-name'], .date-div, .price-div   {
     width: 400px;
+}
+
+.sp > select {
+    width: 270px;
+}
+
+.sp input {
+    /* border: thick dotted thistle; */
+    width: 270px;;
+}
+
+
+.options-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* margin-top: 7.5px; */
+}
+
+label[for='ssd'], label[for='new'] {
+    margin-right: 70px;
+    /* color: rebeccapurple; */
+}
+
+input[type='radio'] {
+    width: 15px
+}
+
+.price-con {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+input[type='date'], #price {
+    border-radius: 8px;
+    border: 1.8px solid #8AC0E2;
+    padding: 10px;
+    width: 400px;
+    height: 60px;
+}
+
+.btn-ctn {
+    width: 930px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 97px;
+    margin-bottom: 63px;
+}
+
+#prv-btn {
+    color: #62A1EB;
+    background-color: #FFFF;
+    position: relative;
+    right: 70px;
+}
+
+.first-title {
+    border-bottom: 2px solid black;
+}
+
+.section-title {
+    padding-bottom: 15px;
+}
+
+#drop_zone {
+    border: 2px dashed #4386A9;
+    border-radius: 18px;
+    background-color: #F7F7F7;
+    width: 878px;
+    height: 423px;
+}
+
+input[type="file"] {
+    height: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+label[for="file"] {
+    box-shadow: 1px 1px 3px #ccc;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    border-radius: 8px;
+    margin-top: 80px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+label[for="file"]:hover {
+    background: linear-gradient(to bottom, #fff, #ddd);
+}
+
+label[for="file"]:active {
+    box-shadow: inset 1px 1px 3px #ccc;
+}
+
+#drp-cnt {
+    width: 233px;
+    margin: 107px auto;
+    text-align: center;
+}
+
+label[for='file'] {
+    border-radius: 8px;
+    padding: 18px 60px;
+    background: #62A1EB;
+    color: #FFFF;
+    line-height: 24px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
 }

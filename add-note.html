@@ -68,6 +68,17 @@
           <fieldset class="sec-tab">
             <div class="input">
       
+                <div class="input-row">
+                    <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+                        <div id="drp-cnt">
+                            <p>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
+                            <input type='file' id='file'/>
+                            <label for='file'>ატვირთე</label>
+                        </div>
+                    </div>
+                </div>
+                
+
               <div class="input-row">
                   <div class="input-div">
                     <!-- aq validacia maklia -->
@@ -116,10 +127,10 @@
                       <div class="options-container">
                           
                           <!-- <div class="options-container"></div> -->
-                              <input type="radio" id="ssd" name="aptop_hard_drive_type" value="SSD">
+                              <input type="radio" id="ssd" name="laptop_hard_drive_type" value="SSD">
                               <label for="ssd">SSD</label>
       
-                              <input type="radio" id="hdd" name="aptop_hard_drive_type" value="HDD">
+                              <input type="radio" id="hdd" name="laptop_hard_drive_type" value="HDD">
                               <label for="hdd">HDD</label>
                           <!-- </div> -->
                       </div>
