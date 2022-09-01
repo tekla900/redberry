@@ -42,3 +42,35 @@ function setInputs() {
 }
 
 form.addEventListener('input', populateStorage)
+
+
+// fetching team and position data
+const selectTeam = document.querySelector('#teams');
+const selectPos = document.querySelector('#positions');
+
+
+fetch('https://pcfy.redberryinternship.ge/api/teams', {mode: 'cors'})
+        .then(response => response.json())
+        .then(function(response){
+            response.data.forEach(element => {
+                const opt = document.createElement('option');
+                opt.textContent = element.name;
+                selectTeam.appendChild(opt)
+            });
+        });
+
+
+        fetch('https://pcfy.redberryinternship.ge/api/positions', {mode: 'cors'})
+        .then(response => response.json())
+        .then(function(response){
+            response.data.forEach(element => {
+              selectTeam.addEventListener('change', () => {
+                const index = selectTeam.selectedIndex;
+                if (index == element.team_id) {
+                    const opt = document.createElement('option');
+                    opt.textContent = element.name;
+                    positions.appendChild(opt)
+                }
+            })
+            });
+        });
