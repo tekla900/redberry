@@ -20,7 +20,14 @@ h3 {
 .laptop {
     background-color: #EAFAFF;
     border: 1px solid #AED1EA;
+    border: 2px solid firebrick;
+    display: flex;
+    flex-direction: row-reverse;
+    /* justify-content: space-between; */
+    /* gap: 20px; */
     width: 460px;
+    align-items: center;
+
     /* height: 50%; */
     height: 205px;
 }
@@ -32,5 +39,32 @@ h3 {
     gap: 60px;
     border: 2px solid plum;
     flex-wrap: wrap;
+    margin: 100px;
+    /* margin: 0 auto !important; */
     /* flex-direction: column; */
+}
+
+.laptop-image {
+    
+    width: 260px;
+    height: 170px;
+    margin-left: 10px;
+}
+
+.titleContainer {
+    border: 2px solid chocolate;
+    margin: 0 auto;
+    width: 180px;
+    align-self: flex-start;
+    margin-top: 40px;
+    /* display: flex;
+    fl */
+}
+
+h4 {
+    margin-bottom: 14px;
+}
+
+h5 {
+    margin-bottom: 40px;
 }
