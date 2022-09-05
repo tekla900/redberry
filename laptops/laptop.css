@@ -48,3 +48,7 @@ p {
     justify-content: space-between;
 }
 
+
+hr {
+    width: 100%;
+}

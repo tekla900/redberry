@@ -82,7 +82,6 @@ async function renderLaptop() {
     document.querySelector('.state').textContent = laptop.data.laptop.state;
     document.querySelector('.price').textContent = laptop.data.laptop.price;
     document.querySelector('.date').textContent = laptop.data.laptop.purchase_date;
-    console.log(laptop.data);
 }
 
 
