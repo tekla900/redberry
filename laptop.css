@@ -6,6 +6,11 @@
     margin: 0 auto;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .first-section, .sec-section, .third-section {
     display: flex;
@@ -26,6 +31,8 @@ p {
 
 .bold {
     font-weight: 500;
+    font-family: 'Helvetica Neue';
+    font-style: normal;
 }
 
 .cont {

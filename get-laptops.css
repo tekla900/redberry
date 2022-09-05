@@ -8,6 +8,7 @@ h3 {
 .laptop {
     background-color: #EAFAFF;
     border: 1px solid #AED1EA;
+    border-radius: 10px;
     /* border: 2px solid firebrick; */
     display: flex;
     flex-direction: row-reverse;
@@ -18,6 +19,10 @@ h3 {
 
     /* height: 50%; */
     height: 205px;
+}
+
+.bold {
+    font-size: 18px;
 }
 
 .laptop-container {

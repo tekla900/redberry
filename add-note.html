@@ -18,7 +18,6 @@
 
       <form action="https://pcfy.redberryinternship.ge/api/laptop/create" id="register-laptop" method="post">
 
-      <!-- <form action="#" id="register-laptop""> -->
         <fieldset class="tab">
             <div class="center">
                 <div class="input-row">
@@ -55,7 +54,7 @@
       
                 <div class="input-div">
                     <label for="number">ტელეფონის ნომერი</label>
-                    <input type="tel" id="number" name="phone_number" placeholder="+995 598 00 07 01">
+                    <input type="tel" id="number" name="phone_number" placeholder="+995 598 00 07 01" pattern="^(\+?995)?\d{9}$">
                     <span>უნდა აკმაყოფილებდეს ქართული მობ.ნომრის ფორმატს</span>
                 </div>
       
@@ -72,11 +71,9 @@
       
                 <div class="input-row drop-zone">
                     <div id="drop_zone" >
-                        <!-- <div id="drop_zone"> -->
                         <div id="drp-cnt">
                             <p>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
-                            <span class="drop-zone__prompt">Drop file here or click to upload</span>
-                            <input type='file' id='laptop_image' name="laptop_image" class="drop-zone__input" required onchange="enc(this)"  ondrop="enc(this)" />
+                            <input type='file' id='laptop_image' name="laptop_image" class="drop-zone__input" required/>
                             <label for='laptop_image'">ატვირთე</label>
                         </div>
                     </div>

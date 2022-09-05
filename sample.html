@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="sample.css"> -->
+<style>
+    #drop_zone {
+        height: 400px;
+    }
+</style>
+</head>
+<body>
+    <div class="input-row drop-zone">
+        <div id="drop_zone" >
+            <!-- <div id="drop_zone"> -->
+            <div id="drp-cnt">
+                <p>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
+                <!-- <span class="drop-zone__prompt">Drop file here or click to upload</span> -->
+                <input type='file' id='laptop_image' name="laptop_image" class="drop-zone__input" required/>
+                <label for='laptop_image'">ატვირთე</label>
+            </div>
+        </div>
+    </div>
+    <script>
+        const fileInput = document.getElementById('laptop_image');
+        // fileInput.
+        fileInput.addEventListener('change', () => {
+        var file = document.getElementById("laptop_image").files[0];
+        console.log(file);
+        var reader = new FileReader();
+        reader.onloadend = function(){
+            console.log(reader.result);
+            document.getElementById('drop_zone').style.backgroundImage = `url(${reader.result})`; 
+            document.getElementById('drop_zone').style.backgroundRepeat = `no-repeat`;
+            document.getElementById('drop_zone').style.backgroundSize = `cover`;       
+        }
+        if(file){
+            reader.readAsDataURL(file);
+        }
+        })
+    </script>
+</body>
+</html>

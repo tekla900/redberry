@@ -3,5 +3,5 @@ document.getElementById("add-note").onclick = function () {
 };
 
 document.getElementById("see-notes").onclick = function () {
-    location.href = "./see-notes";
+    location.href = "./get-laptops.html";
 };

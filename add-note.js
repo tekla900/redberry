@@ -17,13 +17,33 @@ const price = document.getElementById('price');
 const form = document.querySelector('form');
 
 
+
+// if(!localStorage.getItem('name') 
+//   || !localStorage.getItem('surname')
+//   || !localStorage.getItem('email')
+//   || !localStorage.getItem('number')
+//   || !localStorage.getItem('laptop-name')
+//   || !localStorage.getItem('cpu-core')
+//   || !localStorage.getItem('cpu-thread')
+//   || !localStorage.getItem('ram')
+//   || !localStorage.getItem('date')
+//   || !localStorage.getItem('price')
+//   ) 
+if(!localStorage.getItem('name')
+|| !localStorage.getItem('surname')
+|| !localStorage.getItem('email')
+  || !localStorage.getItem('number')) {
+  populateStorage();
+} else {
+  setInputs();
+}
+
 // saving to local storage
 function populateStorage() {
   localStorage.setItem('name',  nameInput.value);
   localStorage.setItem('surname',  surnameInput.value);
   localStorage.setItem('email',  emailInput.value);
   localStorage.setItem('number',  numberInput.value);
-
   localStorage.setItem('laptop-name', laptopName.value);
   localStorage.setItem('cpu-core', cpuCore.value);
   localStorage.setItem('cpu-thread', cpuThread.value);
@@ -53,7 +73,6 @@ function setInputs() {
   surnameInput.value = currentSurname;
   emailInput.value = currentEmail;
   numberInput.value = currentNumber;
-
   laptopName.value = currentLaptopName;
   cpuCore.value = currentCpuCore;
   cpuThread.value = currentCpuThread;
@@ -152,7 +171,7 @@ const secTitle = document.querySelector('.sec-title');
 const backBtn = document.querySelector('.back-button');
 
 backBtn.addEventListener('click', () => {
-  location.href = './landing.html';
+  location.href = './index.html';
 })
 
 nxtBtn.addEventListener('click', () => {
@@ -196,20 +215,7 @@ prvBtn.addEventListener('click', () => {
 })
 
 
-
-function enc(element) {
-
-  let reader = new FileReader();
-    
-  reader.onloadend = function() {
-
-    // set image as background
-    document.getElementById('drop_zone').style.backgroundImage = `url(${reader.result})`;
-    document.getElementById('drop_zone').style.backgroundRepeat = `no-repeat`;
-    document.getElementById('drop_zone').style.backgroundSize = `cover`;
-
-  }
-}
+      
 
 const page = document.querySelector('.add-success');
 const imgContainer = document.querySelector('.img-container');
@@ -223,11 +229,11 @@ function popUpPage() {
   page.style.alignItems = 'center'
 
   form.style.display = 'none';
-  firstTab.style.display = 'none';
-  secTab.style.display = 'none';
-  firstTitle.style.display = 'none';
-  secTitle.style.display = 'none';
-  document.querySelector('.prv-btn-ctn').style.display = 'none';
+  // firstTab.style.display = 'none';
+  // secTab.style.display = 'none';
+  // firstTitle.style.display = 'none';
+  document.querySelector('.title-container').style.display = 'none';
+  // document.querySelector('.prv-btn-ctn').style.display = 'none';
   document.querySelector('.img-container').style.display = 'none';
 }
 
@@ -236,14 +242,29 @@ document.getElementById("toList").onclick = function () {
 };
 
 document.getElementById("main").onclick = function () {
-  location.href = "./landing.html";
+  location.href = "./index.html";
 };
 
+// seting input file background to uploaded picture
+const fileInput = document.getElementById('laptop_image');
+
+fileInput.addEventListener('change', () => {
+  var file = document.getElementById("laptop_image").files[0];
+  console.log(file);
+  var reader = new FileReader();
+  reader.onloadend = function(){
+      console.log(reader.result);
+      document.getElementById('drop_zone').style.backgroundImage = `url(${reader.result})`; 
+      document.getElementById('drop_zone').style.backgroundRepeat = `no-repeat`;
+      document.getElementById('drop_zone').style.backgroundSize = `cover`;       
+  }
+  if(file){
+      reader.readAsDataURL(file);
+  }
+  })
 
 
 // POST FORM DATA
-
-const fileInput = document.getElementById('laptop_image');
 
 async function handleFormSubmit(event) {
 	event.preventDefault();

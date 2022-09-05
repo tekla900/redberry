@@ -1,10 +1,16 @@
 
 @media only screen and (max-width: 390px) {
 
+    body {
+        font-size: 16px; 
+    }
     form, fieldset {
         padding: 0;
         margin: 0;
         width: 390px;
+        /* color: red; */
+        display: flex;
+        flex-direction: column;
     }
 
     .top-btn-ctn {
@@ -21,14 +27,47 @@
         display: none;
     }
 
+    .center {
+        margin: 0 auto;
+    }
+
+    #next-button, #prv-btn {
+        width: 130px;
+    }
+
+    #save {
+        width: 100%;
+        padding: 5px;
+    }
     .title-container {
         margin: 0 auto;
         margin-bottom: 30px;
+        background-color: #F7F7F7;
+        display: flex;
+        width: 100%;
+        /* border: 2px solid orange; */
+        align-items: baseline;
+        padding-bottom: 30px;
+        /* margin-bottom: 30px !important; */
+        /* justify-content: space-around; */
     }
 
+    .back-button, .back-button:hover, .back-button:active {
+        width: 5px;
+        height: 5px;
+        background-color: #F7F7F7;
+        margin: 0;
+    }
+
+    .back-button p {
+        margin: 0;
+        /* border: 2px solid orange; */
+        /* marg */
+    }
     .input-row {
         flex-direction: column;
         width: 100%;
+        gap: 20px;
     }
 
     #illustration {
@@ -41,6 +80,9 @@
         width: 360px !important;
     }
 
+    h3 {
+        font-size: 16px;
+    }
     .center {
       display: flex;
       flex-direction: column;
@@ -101,6 +143,28 @@
     #save {
         margin: 0 ;
         padding: 10px ;
+    }
+
+    .laptop-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .laptop {
+        gap: 15px;
+    }
+
+    .first-section, .sec-section, .third-section {
+        flex-direction: column;
+    }
+
+    #laptop-img {
+        width: 100%;
+        height: auto;
+    }
+
+    hr {
+        width: 100%;
     }
   }
   
