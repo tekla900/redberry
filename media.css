@@ -8,7 +8,6 @@
         padding: 0;
         margin: 0;
         width: 390px;
-        /* color: red; */
         display: flex;
         flex-direction: column;
     }
@@ -45,11 +44,8 @@
         background-color: #F7F7F7;
         display: flex;
         width: 100%;
-        /* border: 2px solid orange; */
         align-items: baseline;
         padding-bottom: 30px;
-        /* margin-bottom: 30px !important; */
-        /* justify-content: space-around; */
     }
 
     .back-button, .back-button:hover, .back-button:active {
@@ -61,9 +57,8 @@
 
     .back-button p {
         margin: 0;
-        /* border: 2px solid orange; */
-        /* marg */
     }
+
     .input-row {
         flex-direction: column;
         width: 100%;
@@ -130,8 +125,6 @@
         padding: 10px;
     }
 
-
-
     input, select {
         width: 358px !important;
     }
@@ -169,6 +162,15 @@
 
     .img-container {
         display: none;
+    }
+
+    img, #laptop-img {
+        width: 360px;
+        height: auto;
+    }
+
+    .laptop-info  {
+        width: 100%;
     }
   }
   

@@ -1,9 +1,9 @@
 .laptop-info {
     display: flex;
     flex-direction: column;
-    /* border: 2px solid yellow; */
-    width: 80vw !important;
+    width: 70vw;
     margin: 0 auto;
+    margin-bottom: 70px;
 }
 
 body {
