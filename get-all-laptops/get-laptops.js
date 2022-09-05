@@ -3,7 +3,7 @@ const container = document.querySelector('.laptop-container ');
 const backBtn = document.querySelector('.back-button');
 
 backBtn.addEventListener('click', () => {
-    location.href = '../add-notes/add-note.html';
+    location.href = '../index.html';
 })
 
 fetch(`https://pcfy.redberryinternship.ge/api/laptops?token=${token}`)
