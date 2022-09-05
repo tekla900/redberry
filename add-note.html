@@ -10,15 +10,12 @@
     <link rel="stylesheet" href="media.css">
 </head>
 <body>
-    <div class="top-btn-ctn">
-        <div class="prv-btn-ctn">
-            <button type="button" id="prv-btn-gray"><img src="./images/Vector.svg" id="prv"></button>
-        </div>
-        <div class="title-container"> 
-            <h3 class="section-title first-title">თანამშრომლის ინფო</h3>
-            <h3 class="section-title sec-title">ლეპტოპის მახასიათებლები</h3>
-        </div>
+    <div class="title-container">
+        <button class="back-button"><p>&#60</p></button>
+        <h3 class="section-title first-title">თანამშრომლის ინფო</h3>
+        <h3 class="section-title sec-title">ლეპტოპის მახასიათებლები</h3>
     </div>
+
       <form action="https://pcfy.redberryinternship.ge/api/laptop/create" id="register-laptop" method="post">
 
       <!-- <form action="#" id="register-laptop""> -->
@@ -27,13 +24,13 @@
                 <div class="input-row">
                     <div class="input-div">
                         <label for="name">სახელი</label>
-                        <input type="text" id="name" name="name" required placeholder="გრიშა" pattern="^(([\u10D0-\u10F0]+)){2,}">
+                        <input type="text" id="name" name="name" required placeholder="გრიშა" >
                         <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
                     </div>
       
                     <div class="input-div">
                         <label for="lastname">გვარი</label>
-                        <input type="text" id="lastname" name="surname" required placeholder="ბაგრატიონი" pattern="^(([\u10D0-\u10F0]+)){2,}">
+                        <input type="text" id="lastname" name="surname" required placeholder="ბაგრატიონი">
                         <span>მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
                     </div>
                 </div>
@@ -52,13 +49,13 @@
       
                 <div class="input-div">
                   <label for="email">მეილი</label>
-                  <input type="email" id="email" name="email" pattern=".+@redberry.ge" required>
+                  <input type="email" id="email" name="email"  required>
                   <span>უნდა მთავრდებოდეს @redberry.ge-ით</span>
                 </div>
       
                 <div class="input-div">
                     <label for="number">ტელეფონის ნომერი</label>
-                    <input type="tel" id="number" name="phone_number" placeholder="+995 598 00 07 01" pattern="^(\+?995)?\d{9}$">
+                    <input type="tel" id="number" name="phone_number" placeholder="+995 598 00 07 01">
                     <span>უნდა აკმაყოფილებდეს ქართული მობ.ნომრის ფორმატს</span>
                 </div>
       

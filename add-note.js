@@ -126,6 +126,20 @@ fetch('https://pcfy.redberryinternship.ge/api/cpus', {mode: 'cors'})
     });
 });
 
+// validating data
+function validateName(name) {
+  let pattern = /^(([\u10D0-\u10F0]+)){2,}$/;
+  return pattern.test(name);
+}
+
+function validateEmail(email) {
+  return email.endsWith('@redberry.ge');
+}
+
+function validateNumber(num) {
+  let pattern= /^(\+?995)?\d{9}$/;
+  return pattern.test(num);
+}
 
 // changing tabs
 
@@ -135,22 +149,45 @@ const firstTab = document.querySelector('.tab');
 const secTab = document.querySelector('.sec-tab');
 const firstTitle = document.querySelector('.first-title');
 const secTitle = document.querySelector('.sec-title');
+const backBtn = document.querySelector('.back-button');
 
+backBtn.addEventListener('click', () => {
+  location.href = './landing.html';
+})
 
 nxtBtn.addEventListener('click', () => {
-  firstTab.style.display = 'none';
-  secTab.style.display = 'inherit';
-  firstTitle.style.borderBottom = 'none';
-  secTitle.style.borderBottom = '2px solid black';
-  // if(nameInput.value && surnameInput.value && emailInput.value && numberInput.value) {
-    
-  // } else {
-  //   alert('შეავსეთ ყველა სავალდებულო ზოლი');
-  // }
+
+  if(!validateName(nameInput.value)) {
+    nameInput.style.borderColor = 'red';
+  }
+  if(!validateName(surnameInput.value)) {
+    surnameInput.style.borderColor = 'red';
+  }
+  if(!validateEmail(emailInput.value)) {
+    emailInput.style.borderColor = 'red';
+  }
+  if(!validateNumber(numberInput.value)) {
+    numberInput.style.borderColor = 'red';
+  }
+  if(!teamsSelect.options[teamsSelect.selectedIndex].value) {
+    teamsSelect.style.borderColor = 'red';
+  }
+  if(!posSelect.options[posSelect.selectedIndex].value) {
+    posSelect.style.borderColor = 'red';
+  }
+
+  if(validateName(nameInput.value) && validateName(surnameInput.value) && validateEmail(emailInput.value) &&  validateNumber(numberInput.value)) {
+    firstTab.style.display = 'none';
+    secTab.style.display = 'inherit';
+    firstTitle.style.borderBottom = 'none';
+    secTitle.style.borderBottom = '2px solid black';
+  } 
     
 })
 
 prvBtn.addEventListener('click', () => {
+    
+
     secTab.style.display = 'none';
     firstTab.style.display = 'inherit';
     
@@ -195,24 +232,22 @@ function popUpPage() {
 }
 
 document.getElementById("toList").onclick = function () {
-  // rame
-  // location.href = "../redberry/select-dropdown-1.html";
+  location.href = "./get-laptops.html";
 };
 
 document.getElementById("main").onclick = function () {
   location.href = "./landing.html";
 };
 
+
+
 // POST FORM DATA
 
 const fileInput = document.getElementById('laptop_image');
 
-
-
 async function handleFormSubmit(event) {
 	event.preventDefault();
 
-  // const form = document.querySelector('form');
 	const url = form.action;
 
 	try {

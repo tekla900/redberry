@@ -3,9 +3,11 @@ const token = 'ca421d1579a320984bc855b2200566e7';
 let url = window.location.href;
 let id = url.substring(url.lastIndexOf('?') + 1);
 const img = document.getElementById('laptop-img');
+const backBtn = document.querySelector('.back-button');
 
-
-console.log("Page location is " + id);
+backBtn.addEventListener('click', () => {
+    location.href = './get-laptops.html';
+})
 
 async function getLaptopInfo() {
     let url = `https://pcfy.redberryinternship.ge/api/laptop/${id}?token=${token}`;
