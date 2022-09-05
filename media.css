@@ -166,5 +166,9 @@
     hr {
         width: 100%;
     }
+
+    .img-container {
+        display: none;
+    }
   }
   
