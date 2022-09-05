@@ -1,0 +1,43 @@
+.laptop-info {
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid yellow; */
+    width: 80vw !important;
+    margin: 0 auto;
+}
+
+
+.first-section, .sec-section, .third-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#laptop-img {
+    height: 342px;
+    width: 577px;
+}
+
+p {
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 22px;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.cont-row {
+    display: flex;
+    align-content: center;
+    gap: 60px;
+    justify-content: space-between;
+    border: 2px solid skyblue;
+}

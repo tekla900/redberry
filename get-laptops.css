@@ -20,7 +20,7 @@ h3 {
 .laptop {
     background-color: #EAFAFF;
     border: 1px solid #AED1EA;
-    border: 2px solid firebrick;
+    /* border: 2px solid firebrick; */
     display: flex;
     flex-direction: row-reverse;
     /* justify-content: space-between; */
@@ -37,7 +37,7 @@ h3 {
     max-width: 1180px;
     /* height: 400px; */
     gap: 60px;
-    border: 2px solid plum;
+    /* border: 2px solid plum; */
     flex-wrap: wrap;
     margin: 100px;
     /* margin: 0 auto !important; */
@@ -52,7 +52,7 @@ h3 {
 }
 
 .titleContainer {
-    border: 2px solid chocolate;
+    /* border: 2px solid chocolate; */
     margin: 0 auto;
     width: 180px;
     align-self: flex-start;
@@ -62,9 +62,14 @@ h3 {
 }
 
 h4 {
+    margin-top: 0;
     margin-bottom: 14px;
 }
 
 h5 {
     margin-bottom: 40px;
+}
+
+.laptop-info {
+    display: none;
 }
