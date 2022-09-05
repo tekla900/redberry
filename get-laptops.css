@@ -1,0 +1,36 @@
+.back-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+}
+
+.title-container {
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    /* gap: 600px; */
+}
+
+h3 {
+    /* max-resolution:; */
+    margin: 0 auto;
+}
+
+.laptop {
+    background-color: #EAFAFF;
+    border: 1px solid #AED1EA;
+    width: 460px;
+    /* height: 50%; */
+    height: 205px;
+}
+
+.laptop-container {
+    display: flex;
+    max-width: 1180px;
+    /* height: 400px; */
+    gap: 60px;
+    border: 2px solid plum;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
