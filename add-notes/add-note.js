@@ -16,23 +16,7 @@ const price = document.getElementById('price');
 
 const form = document.querySelector('form');
 
-
-
-// if(!localStorage.getItem('name') 
-//   || !localStorage.getItem('surname')
-//   || !localStorage.getItem('email')
-//   || !localStorage.getItem('number')
-//   || !localStorage.getItem('laptop-name')
-//   || !localStorage.getItem('cpu-core')
-//   || !localStorage.getItem('cpu-thread')
-//   || !localStorage.getItem('ram')
-//   || !localStorage.getItem('date')
-//   || !localStorage.getItem('price')
-//   ) 
-if(!localStorage.getItem('name')
-|| !localStorage.getItem('surname')
-|| !localStorage.getItem('email')
-  || !localStorage.getItem('number')) {
+if(!localStorage.getItem('name')) {
   populateStorage();
 } else {
   setInputs();
@@ -171,7 +155,7 @@ const secTitle = document.querySelector('.sec-title');
 const backBtn = document.querySelector('.back-button');
 
 backBtn.addEventListener('click', () => {
-  location.href = './index.html';
+  location.href = '../index.html';
 })
 
 nxtBtn.addEventListener('click', () => {
@@ -229,20 +213,16 @@ function popUpPage() {
   page.style.alignItems = 'center'
 
   form.style.display = 'none';
-  // firstTab.style.display = 'none';
-  // secTab.style.display = 'none';
-  // firstTitle.style.display = 'none';
   document.querySelector('.title-container').style.display = 'none';
-  // document.querySelector('.prv-btn-ctn').style.display = 'none';
   document.querySelector('.img-container').style.display = 'none';
 }
 
 document.getElementById("toList").onclick = function () {
-  location.href = "./get-laptops.html";
+  location.href = "../get-all-laptops/get-laptops.html";
 };
 
 document.getElementById("main").onclick = function () {
-  location.href = "./index.html";
+  location.href = "../index.html";
 };
 
 // seting input file background to uploaded picture

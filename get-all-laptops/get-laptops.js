@@ -30,7 +30,7 @@ fetch(`https://pcfy.redberryinternship.ge/api/laptops?token=${token}`)
         h5.textContent = laptopName;
         a.textContent = 'მეტის ნახვა';
         
-        a.href = `laptop.html?${id}`;
+        a.href = `../laptops/laptop.html?${id}`;
 
         titleContainer.appendChild(h4);
         titleContainer.appendChild(h5);

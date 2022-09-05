@@ -6,7 +6,7 @@ const img = document.getElementById('laptop-img');
 const backBtn = document.querySelector('.back-button');
 
 backBtn.addEventListener('click', () => {
-    location.href = './get-laptops.html';
+    location.href = '../get-all-laptops/get-laptops.html';
 })
 
 async function getLaptopInfo() {

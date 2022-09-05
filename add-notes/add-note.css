@@ -61,7 +61,6 @@ input[type='text'], input[id='laptop-name'], .date-div, .price-div   {
 }
 
 .sp input {
-    /* border: thick dotted thistle; */
     width: 270px;;
 }
 
@@ -70,12 +69,10 @@ input[type='text'], input[id='laptop-name'], .date-div, .price-div   {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* margin-top: 7.5px; */
 }
 
 label[for='ssd'], label[for='new'] {
     margin-right: 70px;
-    /* color: rebeccapurple; */
 }
 
 input[type='radio'] {
@@ -134,14 +131,6 @@ input[type="file"] {
     opacity: 0;
 }
 
-/* label[for="laptop_image"] {
-    box-shadow: 1px 1px 3px #ccc;
-    background: linear-gradient(to bottom, #eee, #ccc);
-    border-radius: 8px;
-    margin-top: 80px;
-    text-align: center;
-    line-height: 1.5;
-} */
 
 label[for="laptop_image"]:hover {
     background: linear-gradient(to bottom, #fff, #ddd);
@@ -173,5 +162,4 @@ label[for='laptop_image'] {
 .add-success {
     display: none;
     margin: 20px; 
-    /* maybe i shoul add !important to margin */
 }
