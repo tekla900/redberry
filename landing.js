@@ -9,14 +9,16 @@ document.getElementById("see-notes").onclick = function () {
 };
 
 // changing image based on sreen width
-let query = window.matchMedia("(max-width: 391px)")
+let query = window.matchMedia("(max-width: 390px)")
 
 function changeImg(query) {
     if (query.matches) {
         illustration.src = './images/Group.svg';
-    } else {
+    } 
+    else {
         illustration.src = './images/Group 1.svg';
     }
 }
 
 changeImg(query);
+query.addListener(changeImg);
