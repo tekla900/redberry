@@ -174,7 +174,34 @@ function enc(element) {
   }
 }
 
+const page = document.querySelector('.add-success');
+const imgContainer = document.querySelector('.img-container');
 
+function popUpPage() {
+  page.style.display = 'flex';
+  page.style.width = '897px';
+  page.style.height = '537px';
+  page.style.flexDirection = 'column';
+  page.style.margin = '270px auto';
+  page.style.alignItems = 'center'
+
+  form.style.display = 'none';
+  firstTab.style.display = 'none';
+  secTab.style.display = 'none';
+  firstTitle.style.display = 'none';
+  secTitle.style.display = 'none';
+  document.querySelector('.prv-btn-ctn').style.display = 'none';
+  document.querySelector('.img-container').style.display = 'none';
+}
+
+document.getElementById("toList").onclick = function () {
+  // rame
+  // location.href = "../redberry/select-dropdown-1.html";
+};
+
+document.getElementById("main").onclick = function () {
+  location.href = "./landing.html";
+};
 
 // POST FORM DATA
 
@@ -185,7 +212,7 @@ const fileInput = document.getElementById('laptop_image');
 async function handleFormSubmit(event) {
 	event.preventDefault();
 
-  const form = document.querySelector('form');
+  // const form = document.querySelector('form');
 	const url = form.action;
 
 	try {
@@ -206,7 +233,9 @@ async function handleFormSubmit(event) {
     if (!response.ok) {
       		const errorMessage = await response.text();
       		throw new Error(errorMessage);
-    } 
+    } else {
+      popUpPage();
+    }
 
 	} catch (error) {
 		console.error(error);

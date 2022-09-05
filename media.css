@@ -1,0 +1,106 @@
+
+@media only screen and (max-width: 390px) {
+
+    form, fieldset {
+        padding: 0;
+        margin: 0;
+        width: 390px;
+    }
+
+    .top-btn-ctn {
+        display: flex;
+        height: 80px;
+        width: 100%;
+    }
+
+    hr {
+        width: 390px;
+    }
+
+    .sec-title {
+        display: none;
+    }
+
+    .title-container {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #illustration {
+      width: 268px;
+      height: auto;
+      margin: 40px 0;
+    }
+
+    .input-div {
+        width: 360px !important;
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 360px;
+    }
+
+    .prv-btn-ctn {
+        position: absolute;
+        top: -20px;
+        left: 0;
+    }
+    
+    .btn-div {
+        display: flex;
+        width: 380px !important;
+    }
+
+    #drop_zone {
+        width: 100%;
+    }
+
+    input[type='radio'] {
+        width: 10px !important;
+    }
+
+    button {
+        width: 360px;
+        margin: 16px;
+    }
+
+    .btn-ctn {
+        width: 390px ;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 97px;
+        margin-bottom: 63px;
+    }
+
+    #prv-btn {
+        color: #62A1EB;
+        background-color: #FFFF;
+        position: static ;
+        margin: 0;
+        padding: 10px;
+    }
+
+
+
+    input, select {
+        width: 358px !important;
+    }
+
+    .input {
+        width: 390px;
+    }
+
+    #save {
+        margin: 0 ;
+        padding: 10px ;
+    }
+  }
+  

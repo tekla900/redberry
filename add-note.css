@@ -30,6 +30,7 @@ fieldset {
     align-items: center;
 }
 
+
 .input-div {
     display: flex;
     flex-direction: column;
@@ -124,6 +125,7 @@ input[type='date'], #price {
     background-color: #F7F7F7;
     width: 878px;
     height: 423px;
+    margin-bottom: 50px;
 }
 
 input[type="file"] {
@@ -132,20 +134,20 @@ input[type="file"] {
     opacity: 0;
 }
 
-label[for="file"] {
+/* label[for="laptop_image"] {
     box-shadow: 1px 1px 3px #ccc;
     background: linear-gradient(to bottom, #eee, #ccc);
     border-radius: 8px;
     margin-top: 80px;
     text-align: center;
     line-height: 1.5;
-}
+} */
 
-label[for="file"]:hover {
+label[for="laptop_image"]:hover {
     background: linear-gradient(to bottom, #fff, #ddd);
 }
 
-label[for="file"]:active {
+label[for="laptop_image"]:active {
     box-shadow: inset 1px 1px 3px #ccc;
 }
 
@@ -155,7 +157,7 @@ label[for="file"]:active {
     text-align: center;
 }
 
-label[for='file'] {
+label[for='laptop_image'] {
     border-radius: 8px;
     padding: 18px 60px;
     background: #62A1EB;
@@ -166,4 +168,10 @@ label[for='file'] {
     justify-content: center;
     border: none;
     cursor: pointer;
+}
+
+.add-success {
+    display: none;
+    margin: 20px; 
+    /* maybe i shoul add !important to margin */
 }

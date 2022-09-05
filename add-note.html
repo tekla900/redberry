@@ -7,18 +7,23 @@
     <title>Add Note</title>
     <link rel="stylesheet" href="add-note.css">
     <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="media.css">
 </head>
 <body>
-    <div class="prv-btn-ctn">
-        <button type="button" id="prv-btn-gray"><img src="./images/Vector.svg" id="prv"></button>
+    <div class="top-btn-ctn">
+        <div class="prv-btn-ctn">
+            <button type="button" id="prv-btn-gray"><img src="./images/Vector.svg" id="prv"></button>
+        </div>
+        <div class="title-container"> 
+            <h3 class="section-title first-title">თანამშრომლის ინფო</h3>
+            <h3 class="section-title sec-title">ლეპტოპის მახასიათებლები</h3>
+        </div>
     </div>
-    <div class="title-container"> <!-- ეს დივი შეიძლება არც დამჭირდეს -->
-        <h3 class="section-title first-title">თანამშრომლის ინფო</h3>
-        <h3 class="section-title sec-title">ლეპტოპის მახასიათებლები</h3>
-      </div>
-      <form action="https://pcfy.redberryinternship.ge/api/laptop/create" id="register-laptop">
+      <form action="https://pcfy.redberryinternship.ge/api/laptop/create" id="register-laptop" method="post">
+
+      <!-- <form action="#" id="register-laptop""> -->
         <fieldset class="tab">
-              <div class="center">
+            <div class="center">
                 <div class="input-row">
                     <div class="input-div">
                         <label for="name">სახელი</label>
@@ -34,15 +39,15 @@
                 </div>
               
                 <div>
-                  <select name="teams" id="teams" required>
-                    <option value="" disabled selected>თიმი</option>
-                  </select>
+                    <select name="teams" id="teams" required>
+                        <option value="" disabled selected>თიმი</option>
+                    </select>
                 </div>
       
                 <div>
-                  <select name="positions" id="positions" required>
-                    <option value="" disabled selected>პოზიცია</option>
-                  </select>
+                    <select name="positions" id="positions" required>
+                        <option value="" disabled selected>პოზიცია</option>
+                    </select>
                 </div>
       
                 <div class="input-div">
@@ -61,70 +66,70 @@
                   <button id="next-button" type="button">შემდეგი</button>
                 </div>
             </div>  
-          </fieldset>
+        </fieldset>
 
           
 
-          <fieldset class="sec-tab">
+        <fieldset class="sec-tab">
             <div class="input">
       
-                <div class="input-row">
-                    <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+                <div class="input-row drop-zone">
+                    <div id="drop_zone" >
+                        <!-- <div id="drop_zone"> -->
                         <div id="drp-cnt">
                             <p>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
-                            <input type='file' id='file'/>
-                            <label for='file'>ატვირთე</label>
+                            <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                            <input type='file' id='laptop_image' name="laptop_image" class="drop-zone__input" required onchange="enc(this)"  ondrop="enc(this)" />
+                            <label for='laptop_image'">ატვირთე</label>
                         </div>
                     </div>
                 </div>
-                
 
-              <div class="input-row">
-                  <div class="input-div">
+                <div class="input-row">
+                    <div class="input-div">
                     <!-- aq validacia maklia -->
-                      <label for="laptop-name">ლეპტოპის სახელი</label>
-                      <input type="text" id="laptop-name" name="laptop_name" required>
-                      <span>ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
-                  </div>
-                  <!-- <input type="file" name="laptop_image" required> -->
+                        <label for="laptop-name">ლეპტოპის სახელი</label>
+                        <input type="text" id="laptop-name" name="laptop_name" required>
+                        <span>ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
+                    </div>
       
-                  <select name="laptop-brands" id="laptop-brands" required>
-                      <option value="" disabled selected>ლეპტოპის ბრენდი</option>
-                  </select>
-              </div>
+                    <select name="laptop-brands" id="laptop-brands" required>
+                        <option value="" disabled selected>ლეპტოპის ბრენდი</option>
+                    </select>
+                </div>
       
-              <hr>
+                <hr>
       
-              <div class="input-row sp">
-                  <select name="laptop_cpu" id="cpus" required>
-                      <option value="" disabled selected>ლეპტოპის CPU</option>
-                  </select>
+                <div class="input-row sp">
+                    <select name="laptop_cpu" id="cpus" required>
+                        <option value="" disabled selected>ლეპტოპის CPU</option>
+                    </select>
       
-                  <div class="input-div">
-                      <label for="cpu-core">CPU-ს ბირთვი</label>
-                      <input type="text" id="cpu-core" name="laptop_cpu_cores" required pattern="^[0-9]+$">
-                      <span>მხოლოდ ციფრები</span>
-                  </div>
+                    <div class="input-div">
+                        <label for="cpu-core">CPU-ს ბირთვი</label>
+                        <input type="text" id="cpu-core" name="laptop_cpu_cores" required pattern="^[0-9]+$">
+                        <span>მხოლოდ ციფრები</span>
+                    </div>
       
-                  <div class="input-div">
-                      <label for="cpu-thread">CPU-ს ნაკადი</label>
-                      <input type="text" id="cpu-thread" name="laptop_cpu_threads" required pattern="^[0-9]+$">
-                      <span>მხოლოდ ციფრები</span>
-                  </div>
-              </div>
+                    <div class="input-div">
+                        <label for="cpu-thread">CPU-ს ნაკადი</label>
+                        <input type="text" id="cpu-thread" name="laptop_cpu_threads" required pattern="^[0-9]+$">
+                        <span>მხოლოდ ციფრები</span>
+                    </div>
+                </div>
       
-              <hr>
+                <hr>
               
-              <div class="input-row radio-row">
-                  <div class="input-div">
-                      <label for="ram">ლეპტოპის RAM(გიგაბაიტებში - GB)</label>
-                      <input type="text" id="ram" name="laptop_ram" required pattern="^[0-9]+$">
-                      <span>მხოლოდ ციფრები</span>
-                  </div>
+                <div class="input-row radio-row">
+                    <div class="input-div">
+                        <label for="ram">ლეპტოპის RAM(გიგაბაიტებში - GB)</label>
+                        <input type="text" id="ram" name="laptop_ram" required pattern="^[0-9]+$">
+                        <span>მხოლოდ ციფრები</span>
+                    </div>
       
-                  <div class="input-div radio-container">
-                      <label>მეხსიერების ტიპი</label>
-                      <div class="options-container">
+                    <div class="input-div radio-container">
+                        <label>მეხსიერების ტიპი</label>
+                        <div class="options-container">
                           
                           <!-- <div class="options-container"></div> -->
                               <input type="radio" id="ssd" name="laptop_hard_drive_type" value="SSD">
@@ -133,45 +138,45 @@
                               <input type="radio" id="hdd" name="laptop_hard_drive_type" value="HDD">
                               <label for="hdd">HDD</label>
                           <!-- </div> -->
-                      </div>
-                  </div>
-              </div>
+                        </div>
+                    </div>
+                </div>
       
-              <hr>
+                <hr>
       
              
-              <div class="input-row price-con">
-                  <div class="input-div date-div">
-                      <label for="pur-date">შეძენის რიცხვი (არჩევითი)</label>
-                      <input type="date" id="pur-date" name="laptop_purchase_date">
-                  </div>
+                <div class="input-row price-con">
+                    <div class="input-div date-div">
+                        <label for="pur-date">შეძენის რიცხვი (არჩევითი)</label>
+                        <input type="date" id="pur-date" name="laptop_purchase_date">
+                    </div>
       
-                  <div class="input-div price-div">
-                      <label for="price">ლეპტოპის ფასი(Gel)</label>
-                      <input type="text" name="laptop_price" id="price" placeholder="0000" pattern="^[0-9]+$">
-                      <span>მხოლოდ ციფრები</span>
-                  </div>
-              </div>
+                    <div class="input-div price-div">
+                        <label for="price">ლეპტოპის ფასი(Gel)</label>
+                        <input type="text" name="laptop_price" id="price" placeholder="0000" pattern="^[0-9]+$">
+                        <span>მხოლოდ ციფრები</span>
+                    </div>
+                </div>
       
-              <hr>
+                <hr>
               
-              <div class="con radio-row input-div radio-container">
+                <div class="con radio-row input-div radio-container">
                   
-                  <label>ლეპტოპის მდგომარეობა</label>
-                  <div class="options-container">
-                      <input type="radio" id="new" name="laptop_state" value="new">
-                      <label for="new">ახალი</label>
+                    <label>ლეპტოპის მდგომარეობა</label>
+                    <div class="options-container">
+                        <input type="radio" id="new" name="laptop_state" value="new">
+                        <label for="new">ახალი</label>
           
-                      <input type="radio" id="second-hand" name="laptop_state" value="second-hand">
-                      <label for="second-hand">მეორადი</label>
-                  </div>
-              </div>
-          </div>
+                        <input type="radio" id="used" name="laptop_state" value="used">
+                        <label for="used">მეორადი</label>
+                    </div>
+                </div>
+            </div>
       
       
           <div class="btn-ctn">
               <button type="button" id="prv-btn">უკან</button>
-              <button>დამახსოვრება</button>
+              <button id="save">დამახსოვრება</button>
           </div>
           </fieldset>
 
@@ -180,6 +185,14 @@
         <img src="./images/LOGO-10 2.svg" id="logo-2">
       </div>
       
+
+      <div class="add-success">
+        <img src="./images/Frame.svg" alt="">
+        <h3>ჩანაწერი დამატებულია!</h3>
+        <button id="toList">სიაში გადაყვანა</button>
+        <button class="prv-btn" id="main">მთავარი</button>
+    </div>
+    
       <script src="./add-note.js">
  
       </script>
