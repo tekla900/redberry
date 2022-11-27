@@ -13,7 +13,6 @@ const ram = document.getElementById('ram');
 const date = document.getElementById('pur-date');
 const price = document.getElementById('price');
 
-
 const form = document.querySelector('form');
 
 if(!localStorage.getItem('name')) {
@@ -69,20 +68,16 @@ form.addEventListener('input', populateStorage);
 // -------------
 
 
-
 // FETCHING TEAM AND POSITION DATA
-const selectTeam = document.querySelector('#teams');
-const selectPos = document.querySelector('#positions');
-
 
 fetch('https://pcfy.redberryinternship.ge/api/teams', {mode: 'cors'})
 .then(response => response.json())
 .then(function(response){
     response.data.forEach(element => {
-        const opt = document.createElement('option');
-        opt.textContent = element.name;
-        opt.setAttribute('data-teamId', element.id);
-        selectTeam.appendChild(opt)
+        let htmlRender = `
+          <option data-teamId='${element.id}'>${element.name}</option>
+        `;
+        teamsSelect.innerHTML += htmlRender;
     });
 });
 
@@ -90,15 +85,17 @@ fetch('https://pcfy.redberryinternship.ge/api/teams', {mode: 'cors'})
 fetch('https://pcfy.redberryinternship.ge/api/positions', {mode: 'cors'})
 .then(response => response.json())
 .then(function(response){
+  html = '';
     response.data.forEach(element => {
-      selectTeam.addEventListener('change', () => {
-        const index = selectTeam.selectedIndex;
+      teamsSelect.addEventListener('change', () => {
+        const index = teamsSelect.selectedIndex;
         if (index == element.team_id) {
-            const opt = document.createElement('option');
-            opt.textContent = element.name;
-            opt.setAttribute('data-posId', element.id);
-            positions.appendChild(opt)
+          let htmlRender = `
+            <option data-posId='${element.id}'>${element.name}</option>
+          `;
+          html += htmlRender;
         }
+        positions.innerHTML = html;
     })
     });
 });
@@ -189,17 +186,13 @@ nxtBtn.addEventListener('click', () => {
 })
 
 prvBtn.addEventListener('click', () => {
-    
-
     secTab.style.display = 'none';
     firstTab.style.display = 'inherit';
     
     secTitle.style.borderBottom = 'none';
     firstTitle.style.borderBottom = '2px solid black';
 })
-
-
-      
+     
 
 const page = document.querySelector('.add-success');
 const imgContainer = document.querySelector('.img-container');
@@ -279,6 +272,3 @@ async function handleFormSubmit(event) {
 }
 
 form.addEventListener("submit", handleFormSubmit);
-
-
-
